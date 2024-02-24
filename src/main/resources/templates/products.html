@@ -1,0 +1,146 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>BUYSELL</title>-->
+<!--</head>-->
+<!--<h1>BUYSELL</h1><hr> |-->
+<!--<#if user.email??>-->
+<!--    <h3>Имя пользователя: <i>${user.name}</i></h3>-->
+<!--    <form action="logout" method="post">-->
+<!--        <input type="hidden" name="_csrf" value="${_csrf.token}">-->
+<!--        <input type="submit" value="Выйти">-->
+<!--    </form>-->
+<!--<#else>-->
+<!--    <a href="/login">Войти</a></h1>-->
+
+<!--<h4>Товары со всей России</h4>-->
+<!--<form action="/" method="get">-->
+<!--    Поиск по названию объявления:<input type="text" name="title"><br>-->
+<!--    <input type="submit" value="Поиск"/>-->
+<!--</form>-->
+<!--<#list products as product>-->
+<!--<div>-->
+<!--    <p><b>${product.title}</b> ${product.price} руб. | <a href="/product/${product.id}">Подробнее... </a></p>-->
+<!--</div>-->
+<!--<#else>-->
+<!--<h3>Товаров нет</h3>-->
+<!--<#list>-->
+<!--<#if user.email??>-->
+<!--<hr>-->
+<!--<h3>Создать новый товар</h3>-->
+<!--<form action="/product/create" method="post" enctype="multipart/form-data">-->
+<!--    Название объявления: <input type="text" name="title"/><br><br>-->
+<!--    Описание объявления: <input type="text" name="description"/><br><br>-->
+<!--    Цена: <input type="number" name="price"/><br><br>-->
+<!--    Город: <input type="text" name="city"/><br><br>-->
+<!--    Имя: <input type="text" name="author"/><br><br>-->
+<!--    Первая фотография: <input type="file" name="file1"/>-->
+<!--    Вторая фотография: <input type="file" name="file2"/>-->
+<!--    Третья фотография: <input type="file" name="file3"/>-->
+<!--    <input type="hidden" name="_csrf" value="${_csrf.token}">-->
+<!--    <input type="submit" value="Добавить товар"/>-->
+<!--</form>-->
+<!--</h1>-->
+<!--</html>-->
+
+
+
+
+
+
+<#import "blocks/template.ftlh" as t>
+<@t.template user>
+<h1 style="...">Мои товары</h1>
+<hr>
+<a class="btn btn-dark mt-3 mb-3" style="..."></a>
+data-toggle="collapse" href="collapseExample" role="button"
+aria-expanded="true" aria-controls="collapsExample">
+Добавить новый товар
+</a>
+<div class="collapse mb-3" id="collapseExample" style="">
+    <form action="/product/create" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <!--                <label for="productName">Название товара</label>-->
+            <input type="text" required class="form-controller"
+                   id="productName" name="title">
+        </div>
+        <div class="form-group">
+            <label for="price">Цена товара</label>
+            <div class="input-group mb-3">
+
+                <input type="number" required class="form-controller" id="price" name="price">
+                <div class="input-group-append">
+                    <span class="input-group-text">P</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="searchCity">Город</label>
+            <select id="searchCity" required name="city" class="form-control">
+                <option value="">Город не выбран</option>
+
+                <option value="Москва">Москва</option>
+                <option value="Красноярск">Красноярск</option>
+                <option value="Казань">Казань</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="description">Описание товара</label>
+            <textarea required class="form-control" id="description" name="description"></textarea>
+        </div>
+        <div class="form-group">
+            <div class="custom-file">
+                <input required type="file" name="file1" id="file1">
+                <label class="custom-file-label" for="file1">Первая фотография к товару</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="custom-file">
+                <input required type="file" name="file2" id="file2">
+                <label class="custom-file-label" for="file2">Вторая фотография к товару</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="custom-file">
+                <input required type="file" name="file3" id="file3">
+                <label class="custom-file-label" for="file3">Третья фотография к товару</label>
+            </div>
+        </div>
+        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+
+        <button type="submit" style="..." class="btn btn-dark">Добавить</button>
+    </form>
+</div>
+<div class="card-columns">
+    <#list products as product>
+    <a href="/product/${product.id}" class="product-link">
+        <div class="card text-white bg-dark my-3 product">
+            <div class="card-top">
+                <form action="/product/delete/${product.id}" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                    <button type="submit" class="btn btn-danger m-3">
+                        Удалить
+                    </button>
+                </form>
+            </div>
+            <img src="/images/${product.previewImageId}"
+                 class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">${product-title}</h5>
+                <p class="card-text">${product.price} P</p>
+            </div>
+            <div class="card-footer">
+                ${product.city}
+            </div>
+            <div class="card-footer">
+                ${product.user.name}
+            </div>
+        </div>
+    </a>
+    <!--            <#else>-->
+    <!--                <h1 style="...">Не найдено</h1>-->
+    <!--            </#else>-->
+</div>
+<!--</@t.template>-->
+

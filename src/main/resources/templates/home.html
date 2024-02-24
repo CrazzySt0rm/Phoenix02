@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Phoenix</title>
+</head>
+<h1>Phoenix</h1>
+<div>Шапка</div>
+<head>
+    <style>
+        body {
+        background-color: rgb(251, 223, 240)
+        }
+    </style>
+<!--    <meta http-equiv="refresh" content="0;URL=https://ria.ru" />-->
+</head>
+
+<head>
+<style>
+    .image {
+    float: left;
+    width: 50%;
+    margin: 0 auto;
+    }
+</style>
+</head>
+<body>
+<img th:src="@{images/3db169b97febb6eb245f676e13556e22.png}"/>
+
+<!--<form action="https://ria.ru">-->
+<form action="clear_page">
+    <button type="submit">Click for redirect to clear_page</button>
+</form>
+
+<section class="Phoenix">
+    <h3 >Актуальная информация</h3>
+    <div th:each="el : ${phoenixes}" class="PhoenixController">
+        <div>
+            <p th:text="${el.name}" class="size" name="name" id="text" placeholder="Текст"></p>
+        </div>
+
+
+        <hr class="hh1">
+    </div>
+</section>
+
+
+<a href=th:src="@{/fantasy01.png}"><img th:src="@{images/fantasy01.png}" width="1280" height="720"/></a>
+
+<img th:src="@{images/screenBlackSwan.png}" width="1280" height="720"/>
+<head>
+<style>
+    .block {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+}
+</style>
+</head>
+
+<div class="block">Вообще этим пользуются редко, но иногда всё-же необходимо сделать рамку вокруг рисунка.
+    Для этого можно использовать атрибут border. Делается это примерно так:
+
+    <img th:src="@{images/10-03-frame-around-drawing-in-html.png}"/>
+
+    Здесь мы обводим рисунок рамкой шириной 5 пикселей. По умолчанию цвет рамки будет чёрным.
+    К сожалению, я не знаю простых способов изменить цвет рамки только средствами HTML,
+    а в CSS и прочие прелести я погружаться не буду, так как мой рассказ про HTML.</div>
+
+<img th:src="@{images/659838784a5c2361223181.png}" width="1280" height="720"/>
+
+<head>
+    <style>
+        .someclas {
+        display:block;
+        width: 607px;
+        padding-top: 40px;
+        }
+    </style>
+</head>
+<div class="someclas">
+    <iframe src="//kodik.info/season/89854/08a46a4d9cb024ca4019f2470fae3933/720p" width="607" height="360" frameborder="0"
+            AllowFullScreen allow="autoplay *; fullscreen *"></iframe>
+    <p>что-нибудь про это анимэ</p>
+</div>
+
+<style>
+    .someclas_2 {
+    display: block;
+    float: right;
+    width: 607px;
+    padding-top: 40px;
+
+    }
+    .someclas_3 {
+    display: block;
+    width: 607px;
+    padding: 40px;
+    }
+    .someclas_4 {
+<!--    display:inline-block;-->
+<!--    display: block;-->
+    float: right;
+    width: 607px;
+    border: 2px solid #55c5e9;
+    padding: 15px;
+    background: #666;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    }
+</style>
+<div class="someclas_2">
+<iframe src="//kodik.info/season/97598/4a70f42536ea8af1fba7b2800a69945b/720p" width="607" height="360" frameborder="0" AllowFullScreen allow="autoplay *; fullscreen *"></iframe>
+<p>
+    Аниме зашло конечно, но ньюансы имеются...
+    Рент— искатель приключений, который уже примерно десять лет находится в низах ранговой системы, а если точнее — он медный ранг.
+    Всё это время он мечтал о том что бы получить более высокий ранг. Как-то раз, герой обнаружил секретный проход в лабиринте
+    и казалось бы что лучше одному туда не соваться или как минимум хорошенько подготовиться и вернуться, Рент решил рискнуть.
+    Рискнул он на славу, неизвестность привела его прямиком в рот дракона. Но удивительным образом, смерть не наступила или
+    вернее сказать наступила, в общем парень проснулся и обнаружил некоторые изменения, ведь сейчас он выглядит как скелет, буквально.
+    Ну что ж, зато теперь смерть ему не помеха, а поэтому бывший авантюрист теперь будет развиваться как нежить, а возможно ему даже это понравится?
+</p>
+</div>
+
+<div class="someclas_3">
+    <h3>Ведьма и чудовище</h3>
+    <iframe src="//kodik.info/season/98024/3b688251930a4ebb3821be95d9a30362/720p" width="607" height="360" frameborder="0" AllowFullScreen
+            allow="autoplay *; fullscreen *"></iframe>
+    <p>
+        События разворачиваются на небольшой железнодорожной станции. Два человека, один из них модно одетый мужчина которого зовут Ашаф,
+        носящий на своей спине гроб в сопровождении стаи воронов, а вторая клыкастая девушка по имени Гидо с весьма запоминающейся улыбкой,
+        чем-то напоминает дикого зверя. Какова их цель? Эти двое ищут злобную Ведьму, которая защищает маленький город от различных хищных тварей.
+        По мнению этой парочки ведьма убедила жителей этого городка, в том что она хорошая и защищает их, но они далеко не согласны с этим
+        и намерены разделаться с ней. Но когда они добрались до неё то входе сражения поняли что эта ведьма не та... но же теперь делать,
+        ну конечно же искать нужную ведьму и разделаться с ней.
+    </p>
+</div>
+
+<div class="someclas_4">
+    <h3>Металлическая Руж</h3>
+    <iframe src="//kodik.info/season/97961/7812711580bee744a704d63bf0c24607/720p" width="607" height="360" frameborder="0"
+            AllowFullScreen allow="autoplay *; fullscreen *"></iframe>
+    <p>
+        Руж - главная героиня этой захватывающей экшн-драмы с примесью детектива. Она - эксперт высочайшего уровня,
+        способная выполнять самые сложные и высокооплачиваемые боевые задания. Что ж, она безусловно близка к непобедимости.
+        Но есть одна запутанность: Руж - не просто женщина, она андроид, спроектированный секретным синдикатом для борьбы с преступностью.
+        Пока она выполняет свои миссии, Руж постепенно осознает, что может оказаться втянутой в опасные игры, которые представляют угрозу для
+        обычных людей. Есть еще одни подводный камень - в программу Руж встроено авто-уничтожение в случае ее неповиновения хозяевам.
+        Выбор стоит перед ней: скрыться и спрятаться или сразиться?
+    </p>
+    </div>
+
+<a href="https://animego.org/anime/nezhelanno-bessmertnyy-avantyurist-2475"> Нежеланно бессмертный авантюрист</a>
+<div class="footer">Низ</div>
+</body>
+</html>
